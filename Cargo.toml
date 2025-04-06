@@ -9,6 +9,7 @@ lto = true
 codegen-units = 1
 
 [lib]
+name = "File"
 crate-type = ["cdylib"]
 
 [dependencies]
@@ -16,3 +17,4 @@ caravel_core = { version = "0.1.0", path = "../caravel/caravel_core" }
 caravel_macro = { version = "0.1.2", path = "../caravel/caravel_macro" }
 serde = { version = "1.0.214", features = ["derive"] }
 serde_json = "1.0.132"
+sha2 = "0.10.8"
