@@ -19,13 +19,16 @@ jobs:
       with:
         repository: caravel-io/caravel
         ref: refs/heads/develop
+        path: caravel
     - uses: actions/checkout@v4
+      with:
+        path: caravel_test_module
     - name: debug
       run: pwd; ls -l; ls -l ..
     - name: Build
-      run: cargo build --release
+      run: cd caravel_test_module; cargo build --release
     - name: Upload release artifact
       uses: actions/upload-artifact@v4
       with:
         name: libFile.so
-        path: target/release/libFile.so
+        path: caravel_test_module/target/release/libFile.so
