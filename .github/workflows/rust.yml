@@ -20,6 +20,8 @@ jobs:
         repository: caravel-io/caravel
         ref: refs/heads/develop
     - uses: actions/checkout@v4
+    - name: debug
+      run: pwd; ls -l; ls -l ..
     - name: Build
       run: cargo build --release
     - name: Upload release artifact
