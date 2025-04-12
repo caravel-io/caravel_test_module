@@ -20,11 +20,10 @@ jobs:
       with:
         repository: caravel-io/caravel
         ref: refs/heads/develop
-        path: ".."
     - name: Build
-      run: cargo build --verbose --release
+      run: cd caravel_test_module; cargo build --verbose --release
     - name: Upload release artifact
       uses: actions/upload-artifact@v4
       with:
-        name: caravel_test_module
-        path: target/release/libFile.so
+        name: libFile.so
+        path: caravel_test_module/target/release/libFile.so
