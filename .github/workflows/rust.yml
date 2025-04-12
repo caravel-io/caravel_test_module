@@ -18,6 +18,11 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build
       run: cargo build --verbose --release
+    - uses: actions/checkout@v4
+      with:
+        name: caravel-io/caravel
+        ref: refs/heads/develop
+        path: ".."
     - name: Upload release artifact
       uses: actions/upload-artifact@v4
       with:
