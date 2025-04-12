@@ -16,10 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/checkout@v4
       with:
         repository: caravel-io/caravel
         ref: refs/heads/develop
+    - uses: actions/checkout@v4
     - name: Build
       run: cargo build --release
     - name: Upload release artifact
