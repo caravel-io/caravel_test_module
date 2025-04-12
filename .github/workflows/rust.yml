@@ -32,3 +32,5 @@ jobs:
       with:
         name: libFile.so
         path: caravel_test_module/target/release/libFile.so
+    - name: Publish built binary to GitHub releases
+      run: gh release create --generate-notes ./caravel_test_module/target/release/libFile.so
