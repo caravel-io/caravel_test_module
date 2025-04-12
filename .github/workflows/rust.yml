@@ -21,7 +21,7 @@ jobs:
         repository: caravel-io/caravel
         ref: refs/heads/develop
     - name: Build
-      run: cd caravel_test_module; cargo build --verbose --release
+      run: pwd; ls -l
     - name: Upload release artifact
       uses: actions/upload-artifact@v4
       with:
