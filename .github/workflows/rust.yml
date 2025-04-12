@@ -18,6 +18,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build
       run: cargo build --verbose --release
-    - name: Publish built binary to GitHub releases
-    - run: |
-        gh release create --generate-notes ./target/release/libFile.so
+    - name: Upload release artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: caravel_test_module
+        path: target/release/libFile.so
